@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
     userChoices.note = customNote.value.trim();
 
     // Construct the teaser template message
-    let finalMessage = `Hey! Minnone here. I did your vibe check. Here are my answers:\n\n`;
+    let finalMessage = `Hey! Lithmi here. I did your vibe check. Here are my answers:\n\n`;
     finalMessage += `1. Ease: "${userChoices.step2}"\n`;
     finalMessage += `2. Tension: "${userChoices.step3}"\n`;
     finalMessage += `3. Vibe: "Yes, I like your vibe too! ✨"\n\n`;
