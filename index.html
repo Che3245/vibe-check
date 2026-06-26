@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Check with Minnone</title>
+  <!-- Google Fonts: Outfit for headings, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1.6">
+</head>
+<body>
+  <!-- Ambient Particle Background -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Main Card Container -->
+  <main class="card-container" id="card-container">
+    <!-- Progress Indicator -->
+    <div class="progress-bar-container" id="progress-bar-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Step 1: The Invitation / Envelope -->
+    <section class="step active" id="step-1">
+      <div class="envelope-wrapper">
+        <div class="envelope" id="envelope-btn">
+          <div class="envelope-flap"></div>
+          <div class="envelope-paper">
+            <span class="envelope-heart">❤️</span>
+          </div>
+          <div class="envelope-front"></div>
+        </div>
+      </div>
+      <div class="text-content">
+        <h1 class="step-title font-outfit">Hey Minnone.</h1>
+        <p class="step-desc">I have a quick question for you... but you have to promise to be 100% honest.</p>
+        <button class="btn btn-primary font-outfit" id="btn-start">I promise. Let's go.</button>
+      </div>
+    </section>
+
+    <!-- Step 2: The Smooth Hint -->
+    <section class="step" id="step-2">
+      <div class="step-icon">✨</div>
+      <div class="text-content">
+        <h2 class="step-subtitle font-outfit">The Smooth Hint</h2>
+        <p class="step-quote">"I blame you for being way more interesting than I planned for."</p>
+        <h1 class="step-title font-outfit">Has anyone told you that you make it dangerously easy to like you?</h1>
+        <div class="options-container">
+          <button class="btn btn-outline font-inter" data-choice="Maybe a little... 😉">Maybe a little... 😉</button>
+          <button class="btn btn-outline font-inter" data-choice="I had no idea! 😇">I had no idea! 😇</button>
+          <button class="btn btn-outline font-inter" data-choice="I'm innocent, I swear!">I'm innocent, I swear!</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3: The Tension Builder -->
+    <section class="step" id="step-3">
+      <div class="step-icon">⚡</div>
+      <div class="text-content">
+        <h2 class="step-subtitle font-outfit">The Tension Builder</h2>
+        <p class="step-quote">"I can't decide if you're my type... or the reason I need a new type."</p>
+        <h1 class="step-title font-outfit">Be honest: do you feel a bit of tension between us when we talk, or is it just me?</h1>
+        <div class="options-container">
+          <button class="btn btn-outline font-inter" data-choice="Definitely felt it">Definitely felt it</button>
+          <button class="btn btn-outline font-inter" data-choice="Maybe a tiny bit...">Maybe a tiny bit...</button>
+          <button class="btn btn-outline font-inter" data-choice="It's just you (liar)">It's just you (liar)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 4: The Vibe Check (The Runaway Button) -->
+    <section class="step" id="step-4">
+      <div class="step-icon">🎭</div>
+      <div class="text-content">
+        <h2 class="step-subtitle font-outfit">The Vibe Check</h2>
+        <p class="step-quote">"Getting to know you has been a bigger distraction than I'd like to admit."</p>
+        <h1 class="step-title font-outfit">So Minnone... do you like my vibe too, or are you going to keep pretending you don't know the effect you have?</h1>
+        <div class="vibe-check-options" id="vibe-options-container">
+          <button class="btn btn-primary font-inter" id="btn-vibe-yes" data-choice="Yes, I like your vibe">Yes, I like your vibe ❤️</button>
+          <button class="btn btn-danger font-inter" id="btn-vibe-no">No</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 5: The Date Proposal / Success Screen -->
+    <section class="step" id="step-5">
+      <div class="step-icon success-icon">🥂</div>
+      <div class="text-content">
+        <h2 class="step-subtitle font-outfit">The Confident Move</h2>
+        <p class="step-quote">"I'm not saying I caught feelings... but you're definitely becoming a problem."</p>
+        <h1 class="step-title font-outfit">Let's solve that problem. How are we hanging out?</h1>
+        
+        <div class="date-options">
+          <label class="date-option-card">
+            <input type="radio" name="date-choice" value="Coffee date" checked>
+            <div class="option-card-content">
+              <span class="card-emoji">☕</span>
+              <span class="card-label font-outfit">Coffee & Conversation</span>
+              <p class="card-desc font-inter">Low-key, cozy, and dangerously easy to lose track of time.</p>
+            </div>
+          </label>
+
+          <label class="date-option-card">
+            <input type="radio" name="date-choice" value="Beach date">
+            <div class="option-card-content">
+              <span class="card-emoji">🏖️</span>
+              <span class="card-label font-outfit">Beach & Sunset</span>
+              <p class="card-desc font-inter">Warm sand, sunset views, and a bit of playful teasing.</p>
+            </div>
+          </label>
+
+          <label class="date-option-card">
+            <input type="radio" name="date-choice" value="Mystery adventure">
+            <div class="option-card-content">
+              <span class="card-emoji">🗺️</span>
+              <span class="card-label font-outfit">Mystery Adventure</span>
+              <p class="card-desc font-inter">No plans. Just a map, good music, and zero distractions.</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="custom-note-container">
+          <label for="custom-note" class="font-outfit">Any special requests? (optional)</label>
+          <textarea id="custom-note" class="font-inter" placeholder="e.g., 'You're paying' or 'Only if we get matcha'..." rows="2"></textarea>
+        </div>
+
+        <div class="proposal-actions">
+          <button class="btn btn-primary font-outfit" id="btn-lock-in">Lock It In ✨</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Confetti Canvas for final celebration -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Copied response to clipboard!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
